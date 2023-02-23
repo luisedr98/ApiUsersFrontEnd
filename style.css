@@ -1,5 +1,5 @@
+@import url('node_modules/normalize.css/normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Piazzolla:opsz,wght@8..30,400;8..30,700&display=swap');
-
 
 @tailwind base;
 @tailwind components;
