@@ -1,0 +1,22 @@
+<form novalidate class="flex flex-col bg-gray-500 gap-4 p-5 font-body rounded text-white font-bold w-80">
+
+    <div class="flex justify-between items-center">
+        <span class="p-2 font-title text-3xl">User</span>
+        <button type="button" id="close-modal" class="rounded-md bg-slate-600 p-2">Close</button>
+    </div>
+
+
+    <input class="p-2 bg-gray-100 rounded-md text-black" type="text" name="firstName" placeholder="First Name" />
+    <input class="p-2 bg-gray-100 rounded-md  text-black" type="text" name="lastName" placeholder="Last Name" />
+    <input class="p-2 bg-gray-100 rounded-md  text-black" type="number" name="balance" placeholder="Balance" />
+
+    <div class="flex justify-center">
+        <input type="checkbox" id="is-active" name="isActive" checked />
+        <label for="is-active">is active?</label>
+    </div>
+
+    <button type="submit" class="w-full bg-slate-600 p-2 rounded-md">
+        Save
+    </button>
+
+</form>

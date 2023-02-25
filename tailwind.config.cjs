@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
-const withMT = require("@material-tailwind/html/utils/withMT");
 
-module.exports = withMT({
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,html}"],
   theme: {
     fontFamily: {
       title: ["Lobster", "cursive"],
@@ -12,4 +12,4 @@ module.exports = withMT({
     extend: {},
     plugins: [],
   },
-});
+};
