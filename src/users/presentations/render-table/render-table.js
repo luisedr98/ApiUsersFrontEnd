@@ -1,7 +1,8 @@
 import userStore from "../../store/user-store";
+import { deleteUserById } from "../../uses-cases/delete-user-by-id";
+import { initApp } from "../../uses-cases/init-app";
 import { showModal } from "../render-modal/render-modal";
 
-let table = null;
 
 
 /**
@@ -37,9 +38,9 @@ const createTable = () => {
  * @param {HTMLDivElement} element 
  */
 export const renderTable = (element) => {
-    if(!table){
-        table = createTable();
-    }
+    
+    const table = createTable();
+    
     
     const users = userStore.getUsers();
     const tableBody = table.querySelector('tbody');
@@ -63,6 +64,7 @@ export const renderTable = (element) => {
     
     tableBody.innerHTML = contentBody;
     table.addEventListener('click', tableSelectListener);
+    table.addEventListener('click', tableDeleteListener)
     element.appendChild(table);
     
 }
@@ -78,4 +80,22 @@ const tableSelectListener = (e) => {
     
     const id = element.dataset.id;
     showModal(id);
+}
+
+const tableDeleteListener = async(e) => {
+    const element = e.target.closest('.delete-user');
+    if (!element) return;
+    
+    const id = element.dataset.id;
+    try {
+        await deleteUserById(id);
+        initApp(document.querySelector('#app'), async()=>{
+            await userStore.reloadPage();
+        })
+        document.querySelector('#current-page').textContent = userStore.getCurrentPage();
+    
+    } catch (error) {
+        alert('Error al eliminar');
+        console.log(error)
+    }
 }

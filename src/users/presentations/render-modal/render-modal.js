@@ -1,5 +1,7 @@
 import { User } from "../../models/User";
+import userStore from "../../store/user-store";
 import { getUserById } from "../../uses-cases/get-user-by-id";
+import { initApp } from "../../uses-cases/init-app";
 import modalHTML from "./modal.html?raw";
 
 
@@ -54,6 +56,9 @@ export const renderModal = (element, callback = null) => {
         }
 
         hideModal();
+        await initApp(element, async()=> {
+            await userStore.reloadPage();
+        });
     });
 
     element.append(modal);

@@ -6,7 +6,7 @@ import { showModal } from "../render-modal/render-modal";
  */
 export const renderAddButton = (element) => {
     const divAddButton = document.createElement('div');
-    divAddButton.classList.add('flex', 'justify-end', 'max-w-5xl');
+    divAddButton.classList.add('flex', 'justify-end', 'max-w-5xl', 'order-3');
     const addButton = document.createElement('button');
     addButton.textContent = '+';
     addButton.classList.add("bg-blue-900", "rounded-xl", "py-2", "px-4", "font-bold", "text-white");

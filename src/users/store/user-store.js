@@ -14,11 +14,15 @@ const loadNextPage = async () => {
 }
 
 const loadPreviousPage = async () => {
-    if (state.currentPage === 1) return;
+    if (state.currentPage === 1 || state.currentPage === 0) {
+        state.currentPage = 1;
+        return;
+    }
+
     const users = await loadUserByPages(state.currentPage - 1);
     state.currentPage -= 1;
     state.users = users;
-}
+    }
 
 /**
  * 
@@ -41,7 +45,9 @@ const onUserChanged = (userUpdated) => {
 }
 
 const reloadPage = async () => {
-    throw new Error('Not implemented');
+    const users = await loadUserByPages(state.currentPage);
+    await loadPreviousPage();
+    state.users = users;
 }
 
 export default {
