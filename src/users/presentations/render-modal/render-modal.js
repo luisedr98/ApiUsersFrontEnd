@@ -34,9 +34,9 @@ export const renderModal = (element, callback = null) => {
         e.preventDefault();
 
         const formData = new FormData(form);
-        console.log(formData);
 
         const userLike = {...loadUser};
+        delete userLike.isActive;
 
         for (const [key, value] of formData) {
             if (key === 'balance') {
@@ -44,8 +44,8 @@ export const renderModal = (element, callback = null) => {
                 continue
             }
 
-            if (key === 'isActive') {
-                userLike[key] = (value === 'on') ? true : false;
+            if (key === 'isActive'){
+                userLike[key] = true;
                 continue;
             }
 
@@ -101,5 +101,6 @@ const setFormValues = (user) => {
     form.querySelector("[name=lastName]").value = user.lastName;
     form.querySelector("[name=balance]").value = user.balance;
     form.querySelector("[name=isActive]").checked = user.isActive;
+    form.querySelector("[name=gender]").value = user.gender;
     loadUser = user;
 }

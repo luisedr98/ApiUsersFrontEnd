@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "first_name": "Luis",
-      "last_name": "Dominguez Ruiz",
+      "first_name": "Fred",
+      "last_name": "Campos",
       "balance": 98,
-      "gender": "F",
-      "isActive": true,
+      "gender": "M",
+      "is_active": false,
       "id": 1
     }
   ]

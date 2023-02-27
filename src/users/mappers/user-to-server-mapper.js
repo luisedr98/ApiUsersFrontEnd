@@ -10,19 +10,17 @@ export const userToServer = (user) => {
         id,
         firstName : first_name,
         lastName : last_name,
-        avatar,
         balance, 
         gender,
-        isActive,
+        isActive : is_active,
     } = user;
 
     return {
         id,
         first_name,
         last_name,
-        avatar,
         balance, 
         gender,
-        isActive
+        is_active
     }
 } 

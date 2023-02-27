@@ -8,13 +8,13 @@
     
     <input class="p-2 bg-gray-50 rounded-md text-black" type=text" name="firstName" placeholder="First Name" required/>
     <input class="p-2 bg-gray-50 rounded-md text-black" type="text" name="lastName" placeholder="Last Name" required/>
-    <input class="p-2 bg-gray-50 rounded-md text-black" type="number" name="balance" placeholder="Balance" required/>
-    <select name="gender" class="p-2 bg-gray-50 rounded-md text-gray-400">
+    <input class="p-2 bg-gray-50 rounded-md text-black" type="number" name="balance" min="0" placeholder="Balance" required/>
+    <select name="gender" class="p-2 text-black rounded-md">
         <option value="F" selected>Famale</option>
         <option value="M">Male</option>
     </select>
     <div class="flex justify-center items-center gap-2">
-        <input type="checkbox" class="accent-lime-600" id="is-active" name="isActive" checked/>
+        <input type="checkbox" class="accent-lime-600" id="is-active" name="isActive"/>
         <label for="is-active" class="text-gray-50 font-bold">is active?</label>
     </div>
 
