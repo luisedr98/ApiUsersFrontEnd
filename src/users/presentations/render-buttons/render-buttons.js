@@ -1,7 +1,4 @@
 import userStore from "../../store/user-store";
-import { renderTable } from "../render-table/render-table";
-import { renderAddButton } from "../renderAddButton/renderAddButton";
-import { renderModal } from "../render-modal/render-modal";
 import { initApp } from "../../uses-cases/init-app";
 
 /**
@@ -13,16 +10,16 @@ export const renderButtons = (element) => {
     containerButton.classList.add("flex", "justify-center", "font-bold", "font-body", "text-white", "mt-5", "gap-3", "text-xl", "items-center");
     
     const previusButton = document.createElement('button');
-    previusButton.classList.add('bg-gray-900', 'py-1', 'rounded', 'px-4', 'flex', 'justify-center', 'items-center', 'hover:bg-black');
+    previusButton.classList.add('bg-cyan-700', 'py-1', 'rounded', 'px-4', 'flex', 'justify-center', 'items-center', 'hover:bg-cyan-900');
     previusButton.textContent = '< Prev';
 
     const nextButton = document.createElement('button');
-    nextButton.classList.add('bg-gray-900', 'py-1', 'rounded', 'px-4', 'flex', 'justify-center', 'items-center', 'hover:bg-black');
+    nextButton.classList.add('bg-cyan-700', 'py-1', 'rounded', 'px-4', 'flex', 'justify-center', 'items-center', 'hover:bg-cyan-900');
     nextButton.textContent = 'Next >';
     
     const labelCurrentPage = document.createElement('p');
     labelCurrentPage.id = 'current-page';
-    labelCurrentPage.classList.add('font-title', 'text-3xl', 'px-4');
+    labelCurrentPage.classList.add('font-title', 'text-3xl', 'px-4', 'text-cyan-700');
     labelCurrentPage.textContent = (userStore.getCurrentPage() === 0) ? '1' : userStore.getCurrentPage();
     
     

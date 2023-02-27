@@ -2,18 +2,33 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/database.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/spinner.css">
   <title>Http CRUD App</title>
 </head>
 
-<body class="bg-gray-600">
-  <header>
-    <h1 class="font-title  text-white text-6xl text-center my-5">CRUD UserApi</h1>
-  </header>
-  <div class="container mx-auto my-5" id="app">
+<body class="bg-gray-50">
+  <div id="spinner" class="static flex w-screen h-screen items-center justify-center">
+    <div class="sk-chase">
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+    </div>
   </div>
+  <header>
+    <h1 class="font-title text-cyan-700 text-6xl text-center my-5">CRUD UserApi</h1>
+  </header>
+  <main>
+    <div class="container mx-auto my-5" id="app">
+    </div>
+  </main>
   <script type="module" src="/main.js"></script>
 </body>
 

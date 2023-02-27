@@ -1,3 +1,12 @@
 {
-  "users": []
+  "users": [
+    {
+      "first_name": "Luis",
+      "last_name": "Dominguez Ruiz",
+      "balance": 98,
+      "gender": "F",
+      "isActive": true,
+      "id": 1
+    }
+  ]
 }

@@ -34,6 +34,7 @@ export const renderModal = (element, callback = null) => {
         e.preventDefault();
 
         const formData = new FormData(form);
+        console.log(formData);
 
         const userLike = {...loadUser};
 
@@ -50,6 +51,12 @@ export const renderModal = (element, callback = null) => {
 
             userLike[key] = value;
         }
+
+        if(!Object.keys(userLike).includes('isActive'))
+            userLike.isActive = false;
+
+        if(Object.values(userLike).some(field => field === ''))
+            throw Error('All fields are requered');
 
         if (callback){
             await callback(userLike);
